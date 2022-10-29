@@ -24,6 +24,10 @@ conan_cmake_run(REQUIRES
 )
 conan_basic_setup(NO_OUTPUT_DIRS KEEP_RPATHS)
 
+if(MSVC)
+    add_compile_options(/bigobj)
+endif(MSVC)
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mqtt_cpp)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mqtt_cpp/include)
 
